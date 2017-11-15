@@ -1,0 +1,6 @@
+$dokka.format:html
+$dokka.linkExtension:html
+
+brandenc.com.chatmatch
+brandenc.com.chatmatch.Activities
+brandenc.com.chatmatch.Callbacks

@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TextMatcher - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">brandenc.com.chatmatch</a>&nbsp;/&nbsp;<a href=".">TextMatcher</a><br/>
+<br/>
+<h1>TextMatcher</h1>
+<code><span class="keyword">class </span><span class="identifier">TextMatcher</span></code>
+<p>A parser used to parse emoji's, mentions, and urls</p>
+<h3>Parameters</h3>
+<p><a name="pageTitleRetriever"></a>
+<code>pageTitleRetriever</code> - the class used to grab the page titles from the provided links.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">TextMatcher</span><span class="symbol">(</span><span class="identifier" id="brandenc.com.chatmatch.TextMatcher$<init>(brandenc.com.chatmatch.PageTitleRetriever)/pageTitleRetriever">pageTitleRetriever</span><span class="symbol">:</span>&nbsp;<a href="../-page-title-retriever/index.html"><span class="identifier">PageTitleRetriever</span></a><span class="symbol">)</span></code>
+<p>Creates a TextMatcher</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="page-title-retriever.html">pageTitleRetriever</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">pageTitleRetriever</span><span class="symbol">: </span><a href="../-page-title-retriever/index.html"><span class="identifier">PageTitleRetriever</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="parse-emojis.html">parseEmojis</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">parseEmojis</span><span class="symbol">(</span><span class="identifier" id="brandenc.com.chatmatch.TextMatcher$parseEmojis(kotlin.String)/input">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>only need to consider 'custom' emoji which are alphanumeric strings, no longer than 15</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="parse-mentions.html">parseMentions</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">parseMentions</span><span class="symbol">(</span><span class="identifier" id="brandenc.com.chatmatch.TextMatcher$parseMentions(kotlin.String)/input">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>A way to mention a user. Always starts with an '@' and ends when hitting a non-word
+character.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="parse-urls.html">parseUrls</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">parseUrls</span><span class="symbol">(</span><span class="identifier" id="brandenc.com.chatmatch.TextMatcher$parseUrls(kotlin.String, brandenc.com.chatmatch.Callbacks.LinksCallback)/input">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="brandenc.com.chatmatch.TextMatcher$parseUrls(kotlin.String, brandenc.com.chatmatch.Callbacks.LinksCallback)/callback">callback</span><span class="symbol">:</span>&nbsp;<a href="../../brandenc.com.chatmatch.-callbacks/-links-callback/index.html"><span class="identifier">LinksCallback</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Links - Any URLs contained in the message, along with the page's title.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

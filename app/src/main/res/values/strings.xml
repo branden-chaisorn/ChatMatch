@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ChatMatch</string>
+    <string name="submit_text">Submit</string>
+    <string name="input_text_hint">Input...</string>
+</resources>

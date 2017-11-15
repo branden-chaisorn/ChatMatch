@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JsonCreator - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">brandenc.com.chatmatch</a>&nbsp;/&nbsp;<a href=".">JsonCreator</a><br/>
+<br/>
+<h1>JsonCreator</h1>
+<code><span class="keyword">class </span><span class="identifier">JsonCreator</span></code>
+<p>Auxiliary class used to create the final json output gathered from parsing the input string</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-json-construction-callback/index.html">JsonConstructionCallback</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JsonConstructionCallback</span></code>
+<p>Callback used by the calling user to get the result from the json creation</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">JsonCreator</span><span class="symbol">(</span><span class="identifier" id="brandenc.com.chatmatch.JsonCreator$<init>(brandenc.com.chatmatch.TextMatcher)/textMatcher">textMatcher</span><span class="symbol">:</span>&nbsp;<a href="../-text-matcher/index.html"><span class="identifier">TextMatcher</span></a><span class="symbol">)</span></code>
+<p>Creates a JsonCreator</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="create-json.html">createJson</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">createJson</span><span class="symbol">(</span><span class="identifier" id="brandenc.com.chatmatch.JsonCreator$createJson(kotlin.String, brandenc.com.chatmatch.JsonCreator.JsonConstructionCallback)/input">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="brandenc.com.chatmatch.JsonCreator$createJson(kotlin.String, brandenc.com.chatmatch.JsonCreator.JsonConstructionCallback)/callback">callback</span><span class="symbol">:</span>&nbsp;<a href="-json-construction-callback/index.html"><span class="identifier">JsonConstructionCallback</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Creates json objects from the parsed items found by parsing mentions, emojis, and urls</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

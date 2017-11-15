@@ -2,6 +2,7 @@ package brandenc.com.chatmatch
 
 import org.jsoup.Jsoup
 import java.io.IOException
+import java.net.SocketTimeoutException
 
 /**
  * Implementation of TitleRetreiver class utilizing Jsoup
@@ -9,6 +10,9 @@ import java.io.IOException
  * @constructor Creates a TitleRetriever
  */
 class JsoupTitleRetriever : TitleRetriever {
+
+    private val badUrl = "badURL"
+    private val timeoutException = "timeoutException"
 
     /**
      * Retrieves the page title for the given url
@@ -21,7 +25,9 @@ class JsoupTitleRetriever : TitleRetriever {
         try {
             return Jsoup.connect(url).get().title()
         } catch (e: IOException) {
-            return "badURL"
+            return badUrl
+        } catch (e: SocketTimeoutException) {
+            return timeoutException
         }
     }
 }

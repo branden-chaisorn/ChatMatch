@@ -72,7 +72,8 @@ this format is an emoticon.
 
 - A better way to handle the error cases from Jsoup. In kotlin at least, there was no ask for 
 protection of a try/catch so I, right now, catch an IOException and populate the link title with 
-badURL. This could be used by a backend as a check or we could come up with a better way to handle 
+badURL. Additionally, if there is a SocketTimeoutException eventually we return with socketTimeout.
+ These keys could be used by a backend as a check or we could come up with a better way to handle 
 bad cases while still providing a good user experience.
 - Error handling for the callbacks. Right now the callbacks have a success case but it would be good
  to improve upon error cases and test that they are valid.
@@ -81,3 +82,7 @@ whole code base. I would additionally spend time to generate some code coverage 
 (though that metric and chasing 100% isn't always a good goal).
 - Find some sort of replacement for Findbugs for Kotlin so we can gain back it's benefits.
 - Refine the UI even more
+- Handle more edge cases for url processing (I'm particularly interested in how this is done on 
+Stride)
+- If layout handling got more complicated I would consider using anko layouts to clean things up, 
+though kotlin out of the box with synthetic layouts handles this well

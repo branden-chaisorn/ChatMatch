@@ -56,6 +56,18 @@ class TextMatcherTest {
         assertTrue(acceptedList.containsAll(testList))
     }
 
+    // TODO: Unsure on this case, should the "lol" mention still show up?
+    @Test
+    fun parseMentionsMentionInsideemoji() {
+        val input = "@a@b:lol@lol:@a@c@z"
+
+        val testList = textMatcher.parseMentions(input)
+
+        val acceptedList = listOf("a", "a", "b", "c", "z", "lol")
+
+        assertTrue(acceptedList.containsAll(testList))
+    }
+
     @Test
     fun parseMentionsEmpty() {
         val input = ""
@@ -107,6 +119,17 @@ class TextMatcherTest {
         val testList = textMatcher.parseEmojis(input)
 
         val acceptedList = listOf("lol", "what")
+
+        assertTrue(acceptedList.containsAll(testList))
+    }
+
+    @Test
+    fun parseEmojisValid() {
+        val input = "hello @branden  :lol@whatlol: how's it going? :what:"
+
+        val testList = textMatcher.parseEmojis(input)
+
+        val acceptedList = listOf("what")
 
         assertTrue(acceptedList.containsAll(testList))
     }
@@ -181,5 +204,34 @@ class TextMatcherTest {
 
         })
     }
+
+
+    // TODO: Known bad case, this still returns 2 links with bad urls
+//    @Test
+//    fun parseUrlsBadUrl() {
+//        val input = "test lol https://ww@hellow.nbcol:what:ympics.com " +
+//                "https://mathiasbynens.be/demo/url-regex"
+//
+//        doAnswer {
+//            val titleResponses = mutableListOf<String>()
+//
+//            titleResponses.add("NBC olympics")
+//            titleResponses.add("Hello World")
+//            val callback = it.arguments[1] as TitlesCallback
+//            callback.onSuccessfulPageTitle(titleResponses)
+//
+//            null
+//        }.`when`(pageTitleRetriever).getPageTitles(any(), any())
+//
+//        textMatcher.parseUrls(input, object: LinksCallback {
+//            override fun onSuccessfulLinksGathering(links: List<HashMap<String, String>>) {
+//                assertEquals("NBC olympics", links[0]["title"])
+//                assertEquals("https://www.nbcolympics.com", links[0]["url"])
+//                assertEquals("Hello World", links[1]["title"])
+//                assertEquals("https://mathiasbynens.be/demo/url-regex", links[1]["url"])
+//            }
+//
+//        })
+//    }
 
 }

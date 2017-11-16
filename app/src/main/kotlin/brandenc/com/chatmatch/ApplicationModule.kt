@@ -9,7 +9,7 @@ class ApplicationModule {
 
     @Provides
     @Singleton
-    internal fun provieJsonCreator(): JsonCreator {
+    internal fun provideJsonCreator(): JsonCreator {
         return JsonCreator(TextMatcher(PageTitleRetriever(JsoupTitleRetriever())))
     }
 

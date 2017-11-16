@@ -12,6 +12,8 @@
 <code><span class="keyword">fun </span><span class="identifier">getTitleForUrl</span><span class="symbol">(</span><span class="identifier" id="brandenc.com.chatmatch.JsoupTitleRetriever$getTitleForUrl(kotlin.String)/url">url</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
 <p>Overrides <a href="../-title-retriever/get-title-for-url.html">TitleRetriever.getTitleForUrl</a></p>
 <p>Retrieves the page title for the given url</p>
+<p>Note: If a IOException occurs, the string "badRequest" is returned as the title
+Note: If a SocketTimeoutException occurs, the string "socketTimeout" is returned as the title</p>
 <h3>Parameters</h3>
 <p><a name="url"></a>
 <code>url</code> - the given url</p>

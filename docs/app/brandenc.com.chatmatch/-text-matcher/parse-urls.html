@@ -11,7 +11,10 @@
 <a name="brandenc.com.chatmatch.TextMatcher$parseUrls(kotlin.String, brandenc.com.chatmatch.Callbacks.LinksCallback)"></a>
 <code><span class="keyword">fun </span><span class="identifier">parseUrls</span><span class="symbol">(</span><span class="identifier" id="brandenc.com.chatmatch.TextMatcher$parseUrls(kotlin.String, brandenc.com.chatmatch.Callbacks.LinksCallback)/input">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="brandenc.com.chatmatch.TextMatcher$parseUrls(kotlin.String, brandenc.com.chatmatch.Callbacks.LinksCallback)/callback">callback</span><span class="symbol">:</span>&nbsp;<a href="../../brandenc.com.chatmatch.-callbacks/-links-callback/index.html"><span class="identifier">LinksCallback</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Links - Any URLs contained in the message, along with the page's title.</p>
-<p>Parses a string of input for all contained urls</p>
+<p>Parses a string of input for all contained urls.</p>
+<p>Note some edge cases are not working correctly for example:
+https://ww@hellow.nbcol:what:ympics.com https://mathiasbynens.be/demo/url-regex will
+return two malformed urls</p>
 <h3>Parameters</h3>
 <p><a name="input"></a>
 <code>input</code> - the type of a member in this group.</p>

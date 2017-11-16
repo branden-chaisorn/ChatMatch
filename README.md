@@ -79,8 +79,9 @@ this format is an emoticon.
 
 - Find A better way to handle the error cases from Jsoup. In Kotlin at least, there is no ask for 
 protection of a try/catch so right now I catch an IOException and populate the link title with 
-badRequest. This key could be used on the backend as a check or we could come up with a better way
- to handle bad cases while still providing a good user experience.
+badRequest. Additionally, if we have a timeout Jsoup returns a SocketTimeoutException which we 
+handle by returning socketTimeout. These Keys could be used on the backend as a check or we could 
+come up with a better way to handle bad cases while still providing a good user experience. 
 - Error handling for the callbacks. Right now the callbacks have a success case but it would be good
  to improve upon error cases and test that they are valid. If this was an SDK I would suggest having
  a fail case for the callback and return the exception to let the user handle the error case as they
@@ -94,3 +95,13 @@ whole code base. I would additionally spend time to generate some code coverage 
 Stride)
 - If layout handling got more complicated I would consider using anko layouts to clean things up, 
 though Kotlin out of the box with synthetic layouts handles this well
+
+## Notes
+- After much exploration with Jsoup, I would hope to find a better replacement for it. Testing a 
+classthat directly uses Jsoup has proven to be hard because it's static. I first attempted to test 
+itby using Powermock which does not interface well with Mockito-Kotlin. Also if you have to use 
+Powermock there usually is a better way to test a class. I also tried to be able to pass in some 
+sort of Connection class from Jsoup into the constructor, but since it relies on the URL and that's
+what we pass in every time, it made testing that way not viable. Next steps normally for me to 
+handle this would be to reach out to team members and discuss a best sort of path forward / other 
+ways of testing such a class.

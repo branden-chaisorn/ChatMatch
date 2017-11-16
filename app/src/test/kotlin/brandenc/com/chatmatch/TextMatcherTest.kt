@@ -30,7 +30,7 @@ class TextMatcherTest {
 
         val acceptedList = listOf("Branden", "test", "sup")
 
-        assertTrue(acceptedList.containsAll(testList))
+        assertEquals(acceptedList, testList)
     }
 
     // Assuming right now you can have multiple of the same
@@ -42,7 +42,7 @@ class TextMatcherTest {
 
         val acceptedList = listOf("chris", "chris", "chris", "chris")
 
-        assertTrue(acceptedList.containsAll(testList))
+        assertEquals(acceptedList, testList)
     }
 
     @Test
@@ -51,9 +51,9 @@ class TextMatcherTest {
 
         val testList = textMatcher.parseMentions(input)
 
-        val acceptedList = listOf("a", "a", "b", "c", "z")
+        val acceptedList = listOf("a", "b", "a", "c", "z")
 
-        assertTrue(acceptedList.containsAll(testList))
+        assertEquals(acceptedList, testList)
     }
 
     // TODO: Unsure on this case, should the "lol" mention still show up?
@@ -63,9 +63,9 @@ class TextMatcherTest {
 
         val testList = textMatcher.parseMentions(input)
 
-        val acceptedList = listOf("a", "a", "b", "c", "z", "lol")
+        val acceptedList = listOf("a", "b", "lol", "a", "c", "z")
 
-        assertTrue(acceptedList.containsAll(testList))
+        assertEquals(acceptedList, testList)
     }
 
     @Test
@@ -76,7 +76,19 @@ class TextMatcherTest {
 
         val acceptedList = listOf<String>()
 
-        assertTrue(acceptedList.containsAll(testList))
+        assertEquals(acceptedList, testList)
+    }
+
+    @Test
+    // TODO: Do not parse emails as mentions, maybe further validation for emails?
+    fun parseMentionsEmail() {
+        val input = "branden@gmail.com"
+
+        val testList = textMatcher.parseMentions(input)
+
+        val acceptedList = listOf("gmail")
+
+        assertEquals(acceptedList, testList)
     }
 
     @Test
@@ -87,7 +99,7 @@ class TextMatcherTest {
 
         val acceptedList = listOf("Branden", "Branden", "test", "more")
 
-        assertTrue(acceptedList.containsAll(testList))
+        assertEquals(acceptedList, testList)
     }
 
     @Test
@@ -98,7 +110,7 @@ class TextMatcherTest {
 
         val acceptedList = listOf("test", "lol")
 
-        assertTrue(acceptedList.containsAll(testList))
+        assertEquals(acceptedList, testList)
     }
 
     @Test
@@ -109,7 +121,7 @@ class TextMatcherTest {
 
         val acceptedList = listOf("test", "lol", "what")
 
-        assertTrue(acceptedList.containsAll(testList))
+        assertEquals(acceptedList, testList)
     }
 
     @Test
@@ -120,7 +132,7 @@ class TextMatcherTest {
 
         val acceptedList = listOf("lol", "what")
 
-        assertTrue(acceptedList.containsAll(testList))
+        assertEquals(acceptedList, testList)
     }
 
     @Test
@@ -131,7 +143,8 @@ class TextMatcherTest {
 
         val acceptedList = listOf("what")
 
-        assertTrue(acceptedList.containsAll(testList))
+        assertEquals(acceptedList, testList)
+
     }
 
     @Test
@@ -204,34 +217,5 @@ class TextMatcherTest {
 
         })
     }
-
-
-    // TODO: Known bad case, this still returns 2 links with bad urls
-//    @Test
-//    fun parseUrlsBadUrl() {
-//        val input = "test lol https://ww@hellow.nbcol:what:ympics.com " +
-//                "https://mathiasbynens.be/demo/url-regex"
-//
-//        doAnswer {
-//            val titleResponses = mutableListOf<String>()
-//
-//            titleResponses.add("NBC olympics")
-//            titleResponses.add("Hello World")
-//            val callback = it.arguments[1] as TitlesCallback
-//            callback.onSuccessfulPageTitle(titleResponses)
-//
-//            null
-//        }.`when`(pageTitleRetriever).getPageTitles(any(), any())
-//
-//        textMatcher.parseUrls(input, object: LinksCallback {
-//            override fun onSuccessfulLinksGathering(links: List<HashMap<String, String>>) {
-//                assertEquals("NBC olympics", links[0]["title"])
-//                assertEquals("https://www.nbcolympics.com", links[0]["url"])
-//                assertEquals("Hello World", links[1]["title"])
-//                assertEquals("https://mathiasbynens.be/demo/url-regex", links[1]["url"])
-//            }
-//
-//        })
-//    }
 
 }

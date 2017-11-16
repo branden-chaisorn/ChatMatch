@@ -36,13 +36,13 @@ class JsonCreator(private var textMatcher: TextMatcher) {
         val emojis = textMatcher.parseEmojis(input)
         textMatcher.parseUrls(input, object: LinksCallback {
             override fun onSuccessfulLinksGathering(links: List<HashMap<String,String>>) {
-                val finalJson = JSONObject()
+                val json = JSONObject()
 
-                finalJson.put("mentions", mentions)
-                finalJson.put("emojis", emojis)
-                finalJson.put("links", links)
+                json.put("mentions", mentions)
+                json.put("emojis", emojis)
+                json.put("links", links)
 
-                callback.onJsonCreatedSuccessful(finalJson)
+                callback.onJsonCreatedSuccessful(json)
             }
         })
     }

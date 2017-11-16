@@ -21,11 +21,6 @@ this format is an emoticon.
     - ./gradlew dokka
 - Run unit tests
     - ./gradlew clean check
-    - Note: I added tests for the JSoupTitleRetriever but left them commented out. They run and are
-    viable, but they increase run times of a gradle clean check from 20 seconds to 1 minute and 20
-    seconds. They also feel more like integration tests since they half way test Jsoup functionality
-    which goes against the point of making an interface for that class to implement. Please feel 
-    free to uncomment them and view that they do work!
 - Run UI tests
     - ./gradlew connectedAndroidTest (with a device/emulator attached)
 
@@ -51,10 +46,11 @@ this format is an emoticon.
     because of it's long running support and ease of use. There are a couple of different ways to 
     perform the grab, an inefficient way would be loading a WebView and now showing it, but Jsoup 
     is easy to use and has a clean way of retrieving a page's title. Ideally I would 
-    like to use a library that had better error handling.
+    like to use a library that had better error handling as well as better mockablility, 
+    and efficiency (so a whole page wouldn't have to be loaded before use)
 - Anko
     - Anko was used because it's simply a library that makes Kotlin more readable and concise 
-    without making things too obscure. Specficially the doAsync coroutine made the code more 
+    without making things too obscure. Specifically the doAsync coroutine made the code more 
     readable.
 - Dagger 2
     - In this case, the decision to use Dagger 2 was purely to make our MainActivity more readable 
@@ -98,10 +94,12 @@ though Kotlin out of the box with synthetic layouts handles this well
 
 ## Notes
 - After much exploration with Jsoup, I would hope to find a better replacement for it. Testing a 
-classthat directly uses Jsoup has proven to be hard because it's static. I first attempted to test 
-itby using Powermock which does not interface well with Mockito-Kotlin. Also if you have to use 
+class that directly uses Jsoup has proven to be hard because it's static. I first attempted to test 
+it by using Powermock which does not interface well with Mockito-Kotlin. Also if you have to use 
 Powermock there usually is a better way to test a class. I also tried to be able to pass in some 
 sort of Connection class from Jsoup into the constructor, but since it relies on the URL and that's
-what we pass in every time, it made testing that way not viable. Next steps normally for me to 
-handle this would be to reach out to team members and discuss a best sort of path forward / other 
-ways of testing such a class.
+what we pass in every time, it made testing that way not viable. I also worry that for an extremely 
+large webpage the user would have to wait for the whole page to be loaded before the title would be 
+able to be retrieved. The goal would be to find a library, or perhaps even build one, that would be 
+able to grab just the title. Next steps normally for me to handle this would be to reach out to team
+members and discuss a best sort of path forward / other ways of testing such a class.

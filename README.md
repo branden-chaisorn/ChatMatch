@@ -53,11 +53,11 @@ this format is an emoticon.
     is easy to use and has a clean way of retrieving a page's title. Ideally I would 
     like to use a library that had better error handling.
 - Anko
-    - Anko was used because it's simply a library that makes kotlin more readable and concise 
+    - Anko was used because it's simply a library that makes Kotlin more readable and concise 
     without making things too obscure. Specficially the doAsync coroutine made the code more 
     readable.
 - Dagger 2
-    - In this case, the decision to use Dagger 2 in this case was purely to make our MainActivity more readable 
+    - In this case, the decision to use Dagger 2 was purely to make our MainActivity more readable 
     and to hide the creation of the JsonCreator. Additionally, in a larger scale app the use of 
     dependency injection via Dagger 2 would make more sense since you'd have a centrally located 
     area for various dependencies.
@@ -69,8 +69,8 @@ this format is an emoticon.
     Checkstyle acts as a heavy linter on the project, helping to maintain a consistent code style 
     across the project which makes it easier for collaboration. The Android linter that runs this 
     gives suggestions and risk assessments against the code while suggesting best practices for 
-    Android (Note: It's kotlin support isn't all there and it suggests fixes that don't work in 
-    kotlin / don't make sense to change, hence the 17 violations). PMD is another static analysis 
+    Android (Note: It's Kotlin support isn't all there and it suggests fixes that don't work in 
+    Kotlin / don't make sense to change, hence the 17 violations). PMD is another static analysis 
     tool that is used to find common code mistakes before it's too late. Findbugs is also normally 
     used as a static analysis tool again used to find common programming mistakes. In this case, 
     however, the script was not running and would crash therefore we skip it's check on the project.
@@ -93,4 +93,4 @@ whole code base. I would additionally spend time to generate some code coverage 
 - Handle more edge cases for url processing (I'm particularly interested in how this is done on 
 Stride)
 - If layout handling got more complicated I would consider using anko layouts to clean things up, 
-though kotlin out of the box with synthetic layouts handles this well
+though Kotlin out of the box with synthetic layouts handles this well

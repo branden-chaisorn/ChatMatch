@@ -39,6 +39,7 @@ this format is an emoticon.
 | [Dagger 2](https://github.com/google/dagger)        | A compile-time evolution approach to dependency injection. | [Apache 2.0](https://github.com/google/dagger/blob/master/LICENSE.txt) |
 | [Mockito-Kotlin](https://github.com/nhaarman/mockito-kotlin)        | A small library that provides helper functions to work with Mockito in Kotlin. | [MIT License](https://github.com/nhaarman/mockito-kotlin/blob/master/LICENSE) |
 | [Android-Check](https://github.com/noveogroup/android-check)        | Static code analysis plugin for Android project. | [2017 Noveo Group](https://github.com/noveogroup/android-check/blob/master/LICENSE.txt) |
+| [Dokka](https://github.com/Kotlin/dokka)        |  Dokka is a documentation engine for Kotlin, performing the same function as javadoc for Java. | [Apache 2.0](https://github.com/Kotlin/dokka/blob/master/LICENSE) |
 
 ### Why These Libraries
 - Jsoup

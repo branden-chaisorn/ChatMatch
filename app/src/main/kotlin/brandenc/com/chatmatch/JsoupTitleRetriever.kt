@@ -21,8 +21,6 @@ class JsoupTitleRetriever : TitleRetriever {
      * Note: If a SocketTimeoutException occurs, the string "socketTimeout" is returned as the title
      *
      * @param url the given url
-     * @exception IOException thrown if a bad URL is encountered, returns badURL as string for
-     * further error handling
      */
     override fun getTitleForUrl(url: String): String {
         try {

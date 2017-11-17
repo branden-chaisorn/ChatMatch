@@ -29,6 +29,7 @@ this format is an emoticon.
 
 ## Assumptions
 - Assume that you can have duplicates of mentions, emojis, and links
+- Assume that there are no word breaks between items we'd like to parse
 
 ## Libraries Used
 
@@ -96,6 +97,7 @@ whole code base. I would additionally spend time to generate some code coverage 
 Stride)
 - If layout handling got more complicated I would consider using anko layouts to clean things up, 
 though Kotlin out of the box with synthetic layouts handles this well
+- Parse emails (This would also change the @mention parsing)
 
 ## Notes
 - After much exploration with Jsoup, I would hope to find a better replacement for it. Testing a 

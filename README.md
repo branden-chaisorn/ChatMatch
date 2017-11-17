@@ -4,7 +4,7 @@ ChatMatch is a string parser application that will filter input for mentions, em
 urls.
 
 ## About Creation
-This project was built and test with Android Studio 2.3.3
+This project was built and tested with Android Studio 2.3.3
  
 ## Criteria
 1. Mentions - A way to mention a user. Always starts with an '@' and ends when hitting a non-word 
@@ -97,7 +97,8 @@ whole code base. I would additionally spend time to generate some code coverage 
 Stride)
 - If layout handling got more complicated I would consider using anko layouts to clean things up, 
 though Kotlin out of the box with synthetic layouts handles this well
-- Parse emails (This would also change the @mention parsing)
+- Parse emails (This would also possibly change the @mention parsing)
+- Add Crashlytics or some sort of analytics around crashes so debugging would be easier
 
 ## Notes
 - After much exploration with Jsoup, I would hope to find a better replacement for it. Testing a 

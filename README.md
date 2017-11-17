@@ -59,7 +59,7 @@ this format is an emoticon.
     dependency injection via Dagger 2 would make more sense since you'd have a centrally located 
     area for various dependencies.
 - Mockito-Kotlin
-    - Mockito-Kotlin was used so that we can select which classes / objects to test. This creates a
+    - Mockito-Kotlin is used so that we can select which classes / objects to test. This creates a
     nice separation of concerns when testing and helps to ensure that you only test what you want.
 - Android-Check
     - The Android-Check is used to be able to run static analysis checks against the code base. 
@@ -71,6 +71,10 @@ this format is an emoticon.
     tool that is used to find common code mistakes before it's too late. Findbugs is also normally 
     used as a static analysis tool again used to find common programming mistakes. In this case, 
     however, the script was not running and would crash therefore we skip it's check on the project.
+- Dokka
+    - Dokka is used to document the apis created inside of the application. It's important for other
+    developers to know what each method / class does and javadoc style strings are a great way to 
+    accomplish this.
     
 ## Future Improvements
 
